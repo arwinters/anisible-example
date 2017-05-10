@@ -1,3 +1,4 @@
+---
 - name: Firewall rule to allow smtp on TCP port 25
   action: win_firewall_rule
   args:
