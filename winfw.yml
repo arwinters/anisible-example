@@ -1,0 +1,10 @@
+- name: Firewall rule to allow smtp on TCP port 25
+  action: win_firewall_rule
+  args:
+      name: smtp
+      enable: yes
+      state: present
+      localport: 25
+      action: allow
+      direction: In
+      protocol: TCP
