@@ -1,5 +1,5 @@
 # Filename: helloworld.ps1
 Write-Host
-Write-Host 'Hello World!' | write-out c:\windows\temp\hello-ansi.txt
-Write-Host "Good-bye World! `n"
+Write-Host 'Hello World!' | Write-Output c:\windows\temp\hello-ansi.txt
+Write-Host "Good-bye World! `n" Write-Output c:\windows\temp\hello-ansi.txt
 # end of script
