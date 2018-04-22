@@ -1,0 +1,22 @@
+---
+- name: Test Playbook - Block
+  hosts: all
+  gather_facts: No
+  tasks:
+   - name: Attempt and gracefull roll back demo
+     block:
+       - debug:
+           msg: 'I execute normally'
+       - command: /bin/false
+       - debug:
+           msg: 'I never execute, due to the above task failing'
+     rescue:
+       - name: "Rescue"
+         debug:
+           msg: 'Rescue: I caught an error'
+       - command: echo "Rescue in place tony..."
+         #- debug:
+         #  msg: 'I also never execute :-('
+     always:
+       - debug:
+           msg: "this always executes"
